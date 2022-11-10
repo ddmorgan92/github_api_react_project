@@ -1,0 +1,58 @@
+#primaryContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background-color: #202020
+}
+
+#userInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 5em;
+  margin-top: 1em;
+  background-color:#eee;
+  border: 2px solid #000000;
+  border-radius: 10px;
+}
+
+#repos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  width: 300px;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+#username{
+  margin: 10px 0px;
+}
+
+#searchBtn{
+  width: 100px;
+  height: 35px;
+  font-size: 17px;
+}
+
+.repoInfo{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border: 2px solid #000000;
+  margin: 1em;
+  background-color:#eee;
+  border-radius: 10px;
+}
+
+.repoTitle{
+  align-self: center;
+}
