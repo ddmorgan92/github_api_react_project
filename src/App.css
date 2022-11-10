@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
-  background-color: #202020
+  background: url("https://images.unsplash.com/photo-1533134755454-9549758f0e06?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
 }
 
 #userInfo{
@@ -47,7 +47,7 @@ img{
   display: flex;
   flex-direction: column;
   width: 30%;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   margin: 1em;
   background-color:#eee;
   border-radius: 10px;

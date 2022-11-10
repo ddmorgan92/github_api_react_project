@@ -27,6 +27,7 @@ function GithubUser({userData, updateUser, username, handleChange, repoData}) {
 }
 
 function GithubUserRepos({repoData}) {
+  console.log(repoData)
   if(repoData){
     return(
       <div id="repos">
@@ -34,8 +35,7 @@ function GithubUserRepos({repoData}) {
           <div className='repoInfo'>
             <h3 className='repoTitle'><a href={repo.html_url} target="_blank" rel="noreferrer">{repo.name}</a></h3>
             <ul>
-              <li>Owner: {repo.owner.login}</li>
-              <li>Fork? {repo.fork ? "True" : "False"}</li>
+              <li>{repo.fork ? "This is a fork" : "Not a fork"}</li>
               <li>Date Created: {new Date(repo.created_at).toLocaleDateString()}</li>
               <li>Last Updated: {new Date(repo.updated_at).toLocaleDateString()}</li>
               <li>Open Issues: {repo.open_issues_count}</li>
