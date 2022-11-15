@@ -13,8 +13,8 @@ function GithubUser({
     return (
       <div id="primaryContainer">
         <div id="userInfo">
-          <h1>No user found, please try again</h1>
-          <label>Search for Another User:</label>
+          <h1>GitHub User Lookup</h1>
+          <label>Search for a User:</label>
           <input
             type="text"
             id="username"
@@ -88,29 +88,15 @@ function GithubUserRepos({ repoData }) {
 }
 
 function App() {
-  const [userData, setUserData] = useState(null);
-  const [repoData, setRepoData] = useState(null);
-  const [username, setUsername] = useState("ddmorgan92");
+  const [userData, setUserData] = useState({message: "User not found"});
+  const [repoData, setRepoData] = useState({message: "User not found"});
+  const [username, setUsername] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
 
   const handleChange = (e) => {
     setUsername(e.target.value);
   };
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://api.github.com/users/ddmorgan92`)
-      .then((response) => response.json())
-      .then((userData) => setUserData(userData))
-      .catch(setError);
-
-    fetch(`https://api.github.com/users/${username}/repos`)
-      .then((response) => response.json())
-      .then((repoData) => setRepoData(repoData))
-      .then(() => setLoading(false))
-      .catch(setError);
-  }, []);
 
   function updateUser() {
     setLoading(true);
@@ -126,7 +112,7 @@ function App() {
       .catch(setError);
   }
 
-  if(loading) return <div id="primaryContainer"><h1>Loading...</h1></div>;
+  if(loading) return <div id="primaryContainer"><h1 id="loading">Loading...</h1></div>;
   if(error) return <pre>{JSON.stringify(error)}</pre>;
   if(!userData) return null;
 
